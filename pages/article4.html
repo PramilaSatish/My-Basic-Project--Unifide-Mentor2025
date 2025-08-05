@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>4th Article</title>
+    <link rel="stylesheet" href="./blog.css">
+    <style>
+      body{
+        font-family: Georgia, 'Times New Roman', Times, serif;
+font-size: 25px;
+font-style: italic;
+background-color: rgb(214, 245, 248);
+      }
+    .main{
+        width: 100%;
+        display: flex;
+    }
+    .article{
+        height: auto;
+        width: 60%;
+    }
+    .gallery {
+        width: 40%;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    padding: 30px;
+  }
+  
+  .artwork {
+    transition: transform 0.3s ease;
+    cursor: pointer;
+  }
+  
+  .artwork:hover {
+    transform: scale(1.05);
+  }
+  
+  .artwork img {
+    height: 150px;
+    width: 60%;
+    border-radius: 10px;
+  }
+  
+  /* Modal Popup */
+  .modal {
+    display: none;
+    position: fixed;
+    z-index: 100;
+    padding-top: 80px;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0,0,0,0.9);
+  }
+  
+  .modal-content {
+    margin: auto;
+    display: block;
+    max-width: 80%;
+    border-radius: 10px;
+  }
+  
+  #caption {
+    color: #f1f1f1;
+    margin-top: 15px;
+    font-size: 20px;
+  }
+  
+  .close {
+    position: absolute;
+    top: 30px;
+    right: 40px;
+    color: white;
+    font-size: 35px;
+    cursor: pointer;
+  }
+  
+  @media (max-width: 768px) {
+    .modal-content {
+      width: 90%;
+    }
+  }
+    </style>
+</head>
+<body> 
+  <div class="article1">
+
+    <p class="date" id="published-date"></p>
+    <script>
+      // Set the published date dynamically
+    const publishedDate = new Date("2025-04-8"); // set your date here
+    const dateElement = document.getElementById("published-date");
+    
+    const options = { year: 'numeric', month: 'long', day: 'numeric' };
+    dateElement.textContent = `Published on ${publishedDate.toLocaleDateString(undefined, options)}`;
+    </script>
+    
+<h2> My 4<sup>th</sup> Article</h2> 
+<div class="main">
+<div class="article">
+<h1>"Sometimes I Feel Like Drawing Mandala Art!"</h1>
+  <p>Sometimes, I find myself in the mood to draw mandala art. It’s not planned—it just happens. I 
+feel a pull toward my paper, a quiet moment, and a pen. As I begin with a single dot or circle in the 
+center, the rest starts to flow, one shape at a time. Drawing mandalas makes me feel calm and 
+centered, like everything else fades away except the lines I’m creating.<br>
+Mandala art is special because it’s both simple and complex. It starts with basic shapes—circles, 
+petals, triangles—but when repeated and layered, it turns into something beautiful and intricate. I 
+don’t always know what the final design will look like, and that’s part of the magic. It’s like the 
+design is already there inside me, waiting to come out.<br>
+What I love most is how mandala drawing helps me express emotions I can’t always explain. If I’m 
+feeling stressed or restless, the repetition of patterns helps me relax. If I’m happy or inspired, my 
+lines become more bold and playful. Each mandala becomes a mirror of how I’m feeling in that moment.<br>
+There’s also something peaceful about the balance and symmetry of a mandala. No matter what kind of 
+day I’ve had, the circular flow of shapes reminds me that life can come back to harmony. It teaches 
+me patience, too—because drawing each tiny detail takes time and focus.<br>
+Sometimes, I draw with music in the background, and sometimes I sit in silence. But every time I draw 
+a mandala, I feel more connected to myself. It’s more than just art—it’s a quiet form of meditation,
+ a way of breathing on paper.
+</p></div>
+<div class="gallery">
+    <h3>"My Art Gallery"</h3>
+    <div class="artwork" data-title="Abstract Vibes" data-artist="Artist A">
+        <img src="C:\Users\Dell\Desktop\UNIFIED MENTOR\BLOG\pages\My drawing\024.jpg" alt="Abstract Art 1" />
+      </div>
+      <div class="artwork" data-title="Color Burst" data-artist="Artist B">
+        <img src="C:\Users\Dell\Desktop\UNIFIED MENTOR\BLOG\pages\My drawing\034.jpg" alt="Abstract Art 2" />
+      </div>
+      <div class="artwork" data-title="Color Burst" data-artist="Artist B">
+        <img src="C:\Users\Dell\Desktop\UNIFIED MENTOR\BLOG\pages\My drawing\046.jpg" alt="Abstract Art 3" />
+      </div>
+      <div class="artwork" data-title="Color Burst" data-artist="Artist B">
+        <img src="C:\Users\Dell\Desktop\UNIFIED MENTOR\BLOG\pages\My drawing\052.jpg" alt="Abstract Art 4" />
+      </div>
+      <div class="artwork" data-title="Color Burst" data-artist="Artist B">
+        <img src="C:\Users\Dell\Desktop\UNIFIED MENTOR\BLOG\pages\My drawing\053.jpg" alt="Abstract Art 5" />
+      </div>
+       <!-- Modal Popup -->
+      <div id="artModal" class="modal">
+        <span class="close">&times;</span>
+        <img class="modal-content" id="modal-img" />
+        <div id="caption"></div>
+      </div>
+
+
+</div>
+</div>
+<script>
+    // Get modal elements
+  const modal = document.getElementById("artModal");
+  const modalImg = document.getElementById("modal-img");
+  const captionText = document.getElementById("caption");
+  const closeBtn = document.getElementsByClassName("close")[0];
+  
+  // Open modal on image click
+  document.querySelectorAll(".artwork img").forEach((img) => {
+    img.addEventListener("click", function () {
+      modal.style.display = "block";
+      modalImg.src = this.src;
+  
+      const parent = this.closest(".artwork");
+      const title = parent.getAttribute("data-title");
+      const artist = parent.getAttribute("data-artist");
+  
+      captionText.innerHTML = `<strong>${title}</strong> by ${artist}`;
+    });
+  });
+  
+  // Close modal on "X"
+  closeBtn.onclick = function () {
+    modal.style.display = "none";
+  };
+  
+  // Close modal on outside click
+  window.onclick = function (event) {
+    if (event.target == modal) {
+      modal.style.display = "none";
+    }
+  };
+  
+  </script>
+
+<!-- next article -->
+<div class="next-article"></div>
+    <a href="article4.html">Next Article →</a>
+     <!-- <h2>its my second article.....</h2> -->
+</div>
+<!-- RESPONSE -->
+<div class="response">
+    <button class="btn like" id="likeBtn" onclick="likePost()">👍 Like <span id="likeCount" class="count">0</span></button>
+    <button class="btn dislike" id="dislikeBtn" onclick="dislikePost()">👎 Dislike <span id="dislikeCount" class="count">0</span></button>
+  </div>
+
+  <script>
+    let likeCount = 0;
+    let dislikeCount = 0;
+
+    function likePost() {
+      likeCount++;
+      document.getElementById('likeCount').innerText = likeCount;
+
+      // Disable Dislike button after Like
+      document.getElementById('dislikeBtn').classList.add('disabled');
+    }
+
+    function dislikePost() {
+      dislikeCount++;
+      document.getElementById('dislikeCount').innerText = dislikeCount;
+
+      // Disable Like button after Dislike
+      document.getElementById('likeBtn').classList.add('disabled');
+    }
+  </script>
+</div>
+</body>
+</html>

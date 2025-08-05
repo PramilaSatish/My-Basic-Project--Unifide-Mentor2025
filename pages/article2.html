@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2nd Article</title>
+    <link rel="stylesheet" href="./blog.css">
+    <style>
+      body{
+        font-family: Georgia, 'Times New Roman', Times, serif;
+font-size: 25px;
+font-style: italic;
+background-color: rgb(214, 245, 248);
+      }
+      img{
+        justify-content: center;
+        align-items: center;
+        margin-left: 100px;
+     
+      }
+    </style>
+</head>
+<body> 
+  <div class="article1">
+
+    <p class="date" id="published-date"></p>
+    <script>
+      // Set the published date dynamically
+const publishedDate = new Date("2025-04-3"); // set your date here
+const dateElement = document.getElementById("published-date");
+
+const options = { year: 'numeric', month: 'long', day: 'numeric' };
+dateElement.textContent = `Published on ${publishedDate.toLocaleDateString(undefined, options)}`;
+</script>
+
+<h2> My Hobby!!</h2>  
+ <p>Drawing allows me to express my thoughts, emotions, and imagination on paper. With just a pencil
+  or colors, I can create beautiful images, bring characters to life, and explore new ideas. It 
+  gives me a sense of freedom, where there are no rules—only endless possibilities.<br>
+  I enjoy sketching nature, animals, and portraits. Sometimes, I let my imagination run wild and 
+create fantasy worlds filled with magical creatures. Experimenting with different styles, such as
+realistic, abstract, or cartoon drawing, keeps the hobby exciting and inspiring.</p>
+<img src="C:\Users\Dell\Desktop\UNIFIED MENTOR\BLOG\pages\My drawing\028.jpg" height="1000px" 
+width="1000px">  
+<h1>"Creativity is God’s gift to us. Using our creativity is our gift back to God!"</h1>
+<p>Drawing is my way of worship, where the canvas becomes my altar and the brush my prayer.When I
+draw, I feel connected to the divine. Each stroke is a prayer, each color a hymn.</p>
+<img src="C:\Users\Dell\Desktop\UNIFIED MENTOR\BLOG\pages\My drawing\002.jpg" height="1000px" 
+width="1000px">  
+
+</div>
+<!-- next article -->
+<div class="next-article"></div>
+    <a href="article3.html">Next Article →</a>
+     <!-- <h2>its my second article.....</h2> -->
+</div>
+
+
+ 
+<!-- RESPONSE -->
+<div class="response">
+    <button class="btn like" id="likeBtn" onclick="likePost()">👍 Like <span id="likeCount" class="count">0</span></button>
+    <button class="btn dislike" id="dislikeBtn" onclick="dislikePost()">👎 Dislike <span id="dislikeCount" class="count">0</span></button>
+  </div>
+
+  <script>
+    let likeCount = 0;
+    let dislikeCount = 0;
+
+    function likePost() {
+      likeCount++;
+      document.getElementById('likeCount').innerText = likeCount;
+
+      // Disable Dislike button after Like
+      document.getElementById('dislikeBtn').classList.add('disabled');
+    }
+
+    function dislikePost() {
+      dislikeCount++;
+      document.getElementById('dislikeCount').innerText = dislikeCount;
+
+      // Disable Like button after Dislike
+      document.getElementById('likeBtn').classList.add('disabled');
+    }
+  </script>
+</div>
+</body>
+</html>
