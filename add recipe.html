@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+          box-sizing: border-box;
+          margin: 0;
+          padding: 0;
+          font-family: Georgia, 'Times New Roman', Times, serif;
+          font-style: italic;
+          font-size: 20px;
+        }
+        body {
+          background-color: #ddffd9;
+          padding: 20px;
+          color: #333;
+        }
+        h1,h3 {
+          text-align: center;
+          font-size: 30px;
+          margin-bottom: 20px;
+        }
+        .container {
+          max-width: 1000px;
+          margin: 0 auto;
+        }
+        form {
+          display: flex;
+          flex-direction: column;
+          gap: 10px;
+          margin-bottom: 30px;
+          padding: 20px;
+          border: 1px solid #ccc;
+          border-radius: 10px;
+        }
+        input, textarea {
+          padding: 10px;
+          border: 1px solid #aaa;
+          border-radius: 5px;
+        }
+        input[type="file"] {
+          padding: 3px;
+        }
+        button {
+          padding: 10px;
+          background-color: #28a745;
+          color: white;
+          border: none;
+          border-radius: 5px;
+          cursor: pointer;
+        }
+        button:hover {
+          background-color: #218838;
+        }
+        .search {
+          margin-bottom: 20px;
+        }
+        .recipes {
+          display: grid;
+          grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+          gap: 20px;
+        }
+        .recipe {
+          border: 1px solid #ddd;
+          border-radius: 10px;
+          overflow: hidden;
+          padding: 10px;
+          background: #fff;
+        }
+        .recipe img {
+          width: 100%;
+          height: 150px;
+          object-fit: cover;
+          border-radius: 5px;
+        }
+        .recipe h3 {
+          margin: 10px 0 5px;
+        }
+        .recipe-details {
+          display: none;
+          margin-top: 10px;
+        }
+        .recipe.active .recipe-details {
+          display: block;
+        }
+      </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Add Recipes</h1>
+    <h3>You Can Add Your Own Recipes!</h3>
+        <form id="recipe-form">
+          <input type="text" id="name" placeholder="Recipe Name" required>
+          <textarea id="ingredients" placeholder="Ingredients (comma separated)" required></textarea>
+          <textarea id="steps" placeholder="Preparation Steps" required></textarea>
+          <input type="file" id="image" accept="image/*" required>
+          <button type="submit">Add Recipe</button>
+        </form>
+    
+        <input type="text" id="search" class="search" placeholder="Search recipes...">
+    
+        <div id="recipes" class="recipes"></div>
+      </div>
+    
+      <script>
+        const recipeForm = document.getElementById('recipe-form');
+        const recipesContainer = document.getElementById('recipes');
+        const searchInput = document.getElementById('search');
+    
+        let recipes = JSON.parse(localStorage.getItem('recipes')) || [];
+    
+        function renderRecipes(recipesToShow) {
+          recipesContainer.innerHTML = '';
+          recipesToShow.forEach((recipe, index) => {
+            const div = document.createElement('div');
+            div.classList.add('recipe');
+            div.innerHTML = `
+              <img src="${recipe.image}" alt="${recipe.name}">
+              <h3>${recipe.name}</h3>
+              <p><strong>Ingredients:</strong> ${recipe.ingredients}</p>
+              <button onclick="toggleDetails(${index})">View Details</button>
+              <div class="recipe-details">${recipe.steps}</div>
+            `;
+            recipesContainer.appendChild(div);
+          });
+        }
+    
+        function toggleDetails(index) {
+          const recipeCards = document.querySelectorAll('.recipe');
+          recipeCards[index].classList.toggle('active');
+        }
+    
+        recipeForm.addEventListener('submit', function(e) {
+          e.preventDefault();
+          const name = document.getElementById('name').value.trim();
+          const ingredients = document.getElementById('ingredients').value.trim();
+          const steps = document.getElementById('steps').value.trim();
+          const imageInput = document.getElementById('image');
+    
+          if (!name || !ingredients || !steps || !imageInput.files[0]) {
+            alert("Please fill in all fields.");
+            return;
+          }
+    
+          const reader = new FileReader();
+          reader.onload = function () {
+            const newRecipe = {
+              name,
+              ingredients,
+              steps,
+              image: reader.result
+            };
+    
+            recipes.push(newRecipe);
+            localStorage.setItem('recipes', JSON.stringify(recipes));
+            renderRecipes(recipes);
+            recipeForm.reset();
+          };
+          reader.readAsDataURL(imageInput.files[0]);
+        });
+    
+        searchInput.addEventListener('input', function() {
+          const query = this.value.toLowerCase();
+          const filtered = recipes.filter(recipe =>
+            recipe.name.toLowerCase().includes(query) ||
+            recipe.ingredients.toLowerCase().includes(query)
+          );
+          renderRecipes(filtered);
+        });
+    
+        renderRecipes(recipes);
+      </script> 
+</body>
+</html>

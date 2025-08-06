@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recepi book</title>
+    <link rel="stylesheet" href="./recepibook.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="#" id="logo" class="logo"><img src="C:\Users\Dell\Desktop\UNIFIED MENTOR\Recepi Book\00.png" alt="Your Logo"></a>
+            <ul>
+                <li><a href="#home" class="nav-link active">Home</a></li>
+                <li><a href="#about" class="nav-link">About</a></li>
+                <li><a href="#add recipe.html"target="_new">Add Recipes</a></li>
+                <li><a href="#contact" class="nav-link">Contact</a></li>
+                <li><a href="#reviews" class="nav-link">Reviews</a></li>
+                
+            </ul>
+        </nav>
+    </header>
+    
+    <script>
+        document.getElementById('logo').addEventListener('click', function() {
+            location.reload();
+        });
+    </script>
+    
+
+<div class="container">
+    <div class="search-container">
+        <input type="text" id="search-input" placeholder="Enter the ingredient..." autocomplete="off">
+        <button id="search-btn" type="button">Search</button>
+    </div>
+    <div id="meal" class="meal-list">
+        <!-- Meal items will be displayed here -->
+    </div>
+</div>
+
+<div class="meal-details">
+    <button type="button" class="btn recipe-close-btn" id="recipe-close-btn">
+        <i class="fas fa-times"></i>
+    </button>
+    <div class="meal-details-content">
+    </div>
+</div>
+
+<div class="preview-dishes">
+    <div class="dish-item">
+        <img src="C:\Users\Dell\Desktop\UNIFIED MENTOR\Recepi Book\5.png" alt="Chicken">
+        <p>Chicken</p>
+    </div>
+    <div class="dish-item">
+        <img src="C:\Users\Dell\Desktop\UNIFIED MENTOR\Recepi Book\02.png" alt="Egg">
+        <p>Egg</p>
+    </div>
+    <div class="dish-item">
+        <img src="C:\Users\Dell\Desktop\UNIFIED MENTOR\Recepi Book\03.png" alt="pork">
+        <p>pork</p>
+    </div>
+    <div class="dish-item">
+        <img src="C:\Users\Dell\Desktop\UNIFIED MENTOR\Recepi Book\04.png" alt="beef">
+        <p>beef</p>
+    </div>
+    <div class="dish-item">
+        <img src="C:\Users\Dell\Desktop\UNIFIED MENTOR\Recepi Book\01.png" alt="veg">
+        <p>veg</p>
+    </div>
+    <!-- Add more dish items as needed -->
+</div>
+<br><br>
+<div id="about" class="container">
+  <h2>About Us</h2>
+  <div class="about-content">
+      <p>
+        Welcome to our Recipe Book! We're passionate about making cooking fun and accessible for 
+        everyone. Whether you're a beginner or a seasoned chef, you'll find delicious recipes to try,
+         share, and enjoy. Happy cooking!.
+      </p>
+  </div>
+</div>
+<br>
+<!-- for add recipes -->
+<div id="Addrecipes">
+    <a href="add recipe.html"> <h2>Add recipes</h2></a>
+   <img src="C:\Users\Dell\Desktop\UNIFIED MENTOR\Recepi Book\05.png" alt="Add recipes">
+</div>
+
+
+
+<div id="contact" class="con">
+    <h2>Contact Us</h2>
+    <p>Please feel free to contact us & we would be happy to assist you!<br><br>
+      <form id="contact-form">
+        <div class="form-group">
+            <label for="name" >Name</label>
+            <input type="text" id="name" name="name" required>
+        </div>
+        <div class="form-group">
+            <label for="phone">Phone Number</label>
+            <input type="tel" id="phone" name="phone" required>
+        </div>
+        <div class="form-group">
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" required>
+        </div>
+        <button type="submit">Submit</button>
+    </form>
+</div>
+
+
+</div>
+
+<section id="reviews">
+    <h2>Customer Reviews</h2>
+    <img src="C:\Users\Dell\Desktop\UNIFIED MENTOR\Recepi Book\7.png" alt="Customer Review Image">
+    <div class="comments">
+        <div class="comment">
+            <p>I like all type of Chicken food.</p>
+        </div>
+        <div class="comment">
+            <p>Vegetarian food is quality.</p>
+        </div>
+        <div class="comment">
+            <p>All sweet and desert are excellent.</p>
+        </div>
+    </div>
+</section>
+
+<footer>
+    <p>© 2025 Recipe Book. All rights reserved.</p>
+</footer>
+
+  <script src="recepibook.js"></script>
+</body>
+</html>
