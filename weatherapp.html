@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather Application</title>
+    <link rel="stylesheet" href="./weatherapp.css">
+</head>
+<body>
+    <div class="container">
+        <h1>🌤️ Weather App</h1>
+        <input type="text" id="city" placeholder="Enter city name">
+        <br>
+        <button onclick="getWeather()">Get Weather</button>
+    
+        <div class="weather-info" id="weather-info"></div>
+        <div class="error" id="error" style="display: none;"></div>
+      </div>
+
+      <script>
+        async function getWeather() {
+          const city = document.getElementById('city').value;
+          const apiKey = 'f9af4e374710c7d11f17ff22999b07ab'; // Replace with your real API key
+          const weatherInfo = document.getElementById('weather-info');
+          const errorDiv = document.getElementById('error');
+          weatherInfo.innerHTML = '';
+          errorDiv.style.display = 'none';
+    
+          if (!city) {
+            errorDiv.textContent = 'Please enter a city name.';
+            errorDiv.style.display = 'block';
+            return;
+          }
+    
+          try {
+            const response = await fetch(
+              `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`
+            );
+    
+            if (!response.ok) {
+              throw new Error('City not found');
+            }
+    
+            const data = await response.json();
+            const { name, main, weather } = data;
+    
+            weatherInfo.innerHTML = `
+              <h2>${name}</h2>
+              <p><strong>Temperature:</strong> ${main.temp}°C</p>
+              <p><strong>Condition:</strong> ${weather[0].description}</p>
+              <img class="weather-icon" src="https://openweathermap.org/img/wn/${weather[0].icon}@2x.png" alt="Weather icon">
+            `;
+          } catch (error) {
+            errorDiv.textContent = error.message;
+            errorDiv.style.display = 'block';
+          }
+        }
+      </script>
+</body>
+</html>
