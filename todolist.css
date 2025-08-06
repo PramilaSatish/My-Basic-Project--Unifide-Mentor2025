@@ -1,0 +1,150 @@
+body {
+    font-family:Georgia, 'Times New Roman', Times, serif;
+    font-style: italic;
+    background: #f4f4f4;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: start;
+    min-height: 100vh;
+  }
+  
+  .container {
+    width: 100%;
+    max-width: 500px;
+    background: white;
+    padding: 20px;
+    margin: 40px 10px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    border-radius: 10px;
+  }
+  
+  h1 {
+    text-align: center;
+    color: #051aff;
+    text-shadow: yellow;
+  }
+  
+  .input-group {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+  }
+  
+  #taskInput {
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-style: italic;
+    font-size: 18px;
+    flex: 1;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+  
+  #addTaskBtn {
+    padding: 10px 20px;
+    border: none;
+    background-color: #28a745;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-style: italic;
+    font-size: 20px;
+    color: white;
+    border-radius: 10px;
+    cursor: pointer;
+  }
+  
+  #addTaskBtn:hover {
+    background-color: #218838;
+  }
+  
+  #taskList {
+    list-style:none;
+    padding: 0;
+  }
+  
+  .task-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+  }
+  
+  .task-item input[type="checkbox"] {
+    margin-right: 10px;
+  }
+  
+  .task-desc {
+    flex: 1;
+    margin: 0 10px;
+  }
+  
+  .completed {
+    text-decoration: line-through;
+    color: gray;
+  }
+  
+  button.edit, button.delete {
+    margin-left: 5px;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 10px;
+    cursor: pointer;
+  }
+  
+  button.edit {
+    background-color: #a374fb;
+    color: white;
+  }
+  
+  button.delete {
+    background-color: #ef57a3;
+    color: white;
+  }
+  
+  @media (max-width: 600px) {
+    .input-group {
+      flex-direction: column;
+    }
+  
+    #addTaskBtn {
+      width: 100%;
+    }
+  }
+  .input-group {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  
+  #prioritySelect,
+  #dueDate,
+  #categoryInput {
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-style: italic;
+    font-size: 18px;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+  }
+  
+  .task-meta {
+    font-size: 0.85em;
+    color: #555;
+    margin-top: 5px;
+  }
+  
+  .priority-High {
+    color: rgb(255, 58, 150);
+    font-weight: bold;
+  }
+  
+  .priority-Medium {
+    color: rgb(8, 182, 25);
+  }
+  
+  .priority-Low {
+    color: rgb(0, 85, 255);
+  }
+    
