@@ -1,0 +1,73 @@
+body {
+  font-family: 'Arial', sans-serif;
+  background: #f0f8ff;
+  text-align: center;
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  padding: 40px;
+}
+
+.pet-container {
+  display: inline-block;
+  background: #fff;
+  padding: 20px;
+  border-radius: 15px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+}
+
+#pet {
+  width: 180px;
+  animation: idleBounce 2s infinite ease-in-out;
+  transition: transform 0.3s ease;
+}
+
+#zzz {
+  font-size: 32px;
+  display: none;
+  margin-top: 10px;
+  color: #555;
+}
+
+#pet.sleeping {
+  filter: brightness(50%);
+}
+
+@keyframes idleBounce {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-8px); }
+}
+
+.happy {
+  animation: pulse 0.6s ease;
+}
+
+@keyframes pulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.15); }
+  100% { transform: scale(1); }
+}
+
+.stats {
+  margin-top: 15px;
+  font-size: 18px;
+}
+
+.controls button {
+  padding: 10px 20px;
+  margin: 10px;
+  font-size: 16px;
+  border: none;
+  background: #4CAF50;
+  color: white;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+.controls button:hover {
+  background: #388e3c;
+  transform: scale(1.05);
+}

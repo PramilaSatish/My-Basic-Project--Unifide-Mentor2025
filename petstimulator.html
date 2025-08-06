@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Virtual Pet Stimulator</title>
+    <link rel="stylesheet" href="./petstimulator.css">
+</head>
+<body>
+  <div class="container">
+    <h1>🐶 Virtual Pet Simulator</h1>
+    <div class="pet-container">
+      <img id="pet" src="C:\Users\Dell\Desktop\UNIFIED MENTOR\2.Virtual pet stimulator\00.png" alt="Virtual Pet" />
+      <div id="zzz">💤</div>
+      <div class="stats">
+        <p>Hunger: <span id="hunger">50</span></p>
+        <p>Happiness: <span id="happiness">70</span></p>
+       
+      </div>
+      <div class="controls">
+        <button onclick="feedPet()">🍗 Feed</button>
+        <button onclick="playWithPet()">🎾 Play</button>
+        <button onclick="sleepPet()">🛏 Sleep</button>
+      </div>
+    </div>
+  </div>
+    
+      <!-- Sound effects -->
+      <audio id="soundFeed" src="C:\Users\Dell\Desktop\UNIFIED MENTOR\2.Virtual pet stimulator\Whoop - Anno Domini Beats.mp3" preload="auto"></audio>
+      <audio id="soundPlay" src="C:\Users\Dell\Desktop\UNIFIED MENTOR\2.Virtual pet stimulator\Wonder - Anno Domini Beats.mp3" preload="auto"></audio>
+      <audio id="soundSleep" src="C:\Users\Dell\Desktop\UNIFIED MENTOR\2.Virtual pet stimulator\Sacrifices - Anno Domini Beats.mp3" preload="auto"></audio>
+    
+
+
+    <script src="petstimulator.js"></script>
+</body>
+</html>
