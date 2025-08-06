@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2nd Article</title>
+    <link rel="stylesheet" href="./blog.css">
+    <style>
+      body{
+        font-family: Georgia, 'Times New Roman', Times, serif;
+font-size: 25px;
+font-style: italic;
+background-color: rgb(214, 245, 248);
+      }
+    </style>
+</head>
+<body> 
+  <div class="article1">
+
+    <p class="date" id="published-date"></p>
+    <script>
+      // Set the published date dynamically
+    const publishedDate = new Date("2025-04-5"); // set your date here
+    const dateElement = document.getElementById("published-date");
+    
+    const options = { year: 'numeric', month: 'long', day: 'numeric' };
+    dateElement.textContent = `Published on ${publishedDate.toLocaleDateString(undefined, options)}`;
+    </script>
+    
+<h2> My N<sup>th</sup> Article</h2>   <p>HERE IS MAIN CONTENT</p>
+
+
+
+
+
+
+<!-- next article -->
+<div class="next-article"></div>
+    <a href="article4.html">Next Article →</a>
+     <!-- <h2>its my second article.....</h2> -->
+</div>
+<!-- RESPONSE -->
+<div class="response">
+    <button class="btn like" id="likeBtn" onclick="likePost()">👍 Like <span id="likeCount" class="count">0</span></button>
+    <button class="btn dislike" id="dislikeBtn" onclick="dislikePost()">👎 Dislike <span id="dislikeCount" class="count">0</span></button>
+  </div>
+
+  <script>
+    let likeCount = 0;
+    let dislikeCount = 0;
+
+    function likePost() {
+      likeCount++;
+      document.getElementById('likeCount').innerText = likeCount;
+
+      // Disable Dislike button after Like
+      document.getElementById('dislikeBtn').classList.add('disabled');
+    }
+
+    function dislikePost() {
+      dislikeCount++;
+      document.getElementById('dislikeCount').innerText = dislikeCount;
+
+      // Disable Like button after Dislike
+      document.getElementById('likeBtn').classList.add('disabled');
+    }
+  </script>
+</div>
+</body>
+</html>

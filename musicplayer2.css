@@ -1,0 +1,157 @@
+/* General body style */
+body {
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  font-style: italic;
+  background: #222;
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  padding: 50px;
+  transition: background 0.5s, color 0.5s;
+}
+
+/* Player Box */
+.player {
+  width: 300px;
+  padding: 20px;
+  background: #333;
+  border-radius: 10px;
+  text-align: center;
+  box-shadow: 0 0 15px rgba(0,0,0,0.5);
+  transition: background 0.5s, color 0.5s;
+}
+
+/* Song Title and Artist */
+h2, h3 {
+  margin: 5px 0;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+/* Control Buttons */
+.controls button,
+.extra-controls button,
+#theme-toggle {
+  background: none;
+  border: 1px solid #fff;
+  color: #fff;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  font-style: italic;
+  font-size: 20px;
+  margin: 10px 5px;
+  padding: 8px 12px;
+  border-radius: 15px;
+  cursor: pointer;
+  transition: transform 0.2s, background 0.3s, border 0.3s;
+}
+
+.controls button:hover,
+.extra-controls button:hover,
+#theme-toggle:hover {
+  transform: scale(1.1);
+  background: rgba(255, 255, 255, 0.1);
+}
+
+/* Progress Bar Style */
+input[type=range] {
+  width: 100%;
+  margin: 10px 0;
+  -webkit-appearance: none;
+  background: #555;
+  height: 5px;
+  border-radius: 5px;
+  outline: none;
+  transition: background 0.3s;
+}
+
+input[type=range]:hover {
+  background: #888;
+}
+
+input[type=range]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  height: 15px;
+  width: 15px;
+  background: #fff;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+input[type=range]:hover::-webkit-slider-thumb {
+  background: #ddd;
+}
+
+/* Volume Control */
+.volume-control {
+  margin-top: 10px;
+}
+
+/* Playlist Items */
+ul {
+  list-style: none;
+  padding: 0;
+  margin-top: 10px;
+}
+
+ul li {
+  cursor: pointer;
+  padding: 5px;
+  border-bottom: 1px solid #444;
+  transition: background 0.3s;
+}
+
+ul li:hover {
+  background: #555;
+}
+
+/* Theme Toggle Button */
+#theme-toggle {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+}
+
+/* Light Theme Styles */
+body.light {
+  background: #f0f0f0;
+  color: #222;
+}
+
+body.light .player {
+  background: #fff;
+  color: #222;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+}
+
+body.light .controls button,
+body.light .extra-controls button,
+body.light #theme-toggle {
+  border: 1px solid #222;
+  color: #222;
+}
+
+body.light ul li {
+  border-bottom: 1px solid #ccc;
+}
+
+body.light ul li:hover {
+  background: #ddd;
+}
+
+input[type=range]::-webkit-slider-thumb {
+  background: #fff;
+}
+
+body.light input[type=range] {
+  background: #ccc;
+}
+
+body.light input[type=range]:hover {
+  background: #bbb;
+}
+
+body.light input[type=range]:hover::-webkit-slider-thumb {
+  background: #999;
+}

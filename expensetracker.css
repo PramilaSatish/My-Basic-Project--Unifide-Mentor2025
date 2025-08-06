@@ -1,0 +1,87 @@
+* {
+    box-sizing: border-box;
+  }
+  body {
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-style: italic;
+    font-size: 25px;
+    margin: 0;
+    padding: 20px;
+    background: #f0f2f5;
+  }
+  .container {
+    max-width: 800px;
+    margin: auto;
+    background: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(70, 10, 250, 0.1);
+  }
+  h1 {
+    text-align: center;
+    color: #007bff;
+    margin-bottom: 20px;
+  }
+  form {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 20px;
+  }
+  input, select, button {
+    padding: 10px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-style: italic;
+    font-size: 25px;
+    border-radius: 10px;
+    background-color: rgb(221, 252, 252);
+  }
+  input, select {
+    flex: 1 1 150px;
+  }
+  button {
+    flex: 1 1 50%;
+    background-color: #007bff;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-style: italic;
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 12px;
+  }
+  button:hover {
+    background-color: #0056b3;
+  }
+  .summary {
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 20px;
+  }
+  .summary div {
+    cursor: pointer;
+  }
+  .transactions {
+    list-style: none;
+    padding: 0;
+  }
+  .transactions li {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+  }
+  .transactions li.income {
+    color: green;
+  }
+  .transactions li.expense {
+    color: red;
+  }
+  @media (max-width: 600px) {
+    form {
+      flex-direction: column;
+    }
+    .summary {
+      flex-direction: column;
+      gap: 10px;
+    }
+  }

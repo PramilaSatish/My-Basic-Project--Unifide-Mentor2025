@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interactive Resume</title>
+    <link rel="stylesheet" href="./Interactive Resume.css">
+</head>
+<body>
+  
+
+  <!-- Navigation Menu -->
+  <nav>
+    <ul>
+      <li><a href="#about">About</a></li>
+      <li><a href="#education">Education</a></li>
+      <li><a href="#experience">Experience</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#projects">Projects</a></li>
+    </ul>
+  </nav>
+
+  <!-- Header Section -->
+  <header>
+    <h1 id="name">Pramila Satish Borate</h1>
+    <p>Web Developer | Graphic Designer </p>
+    <p>Email: kudaleyogita@gmail.com | Phone: +91-9594281444</p>
+  </header>
+
+  <!-- About Section -->
+  <section id="about">
+    <h2>About Me</h2>
+    <p>I am a passionate Web Developer with skills in creating interactive and engaging websites and applications.
+     I enjoy problem-solving and bringing creative ideas to life on the web.</p>
+  </section>
+
+  <!-- Education Section -->
+  <section id="education">
+    <h2>Education</h2>
+    <ul>
+      <li>Bachelor of Science - Shivaji University, Kolhapur, Maharashtra.(2005)</li>
+      <li>Graphic Design (2023)</li>
+      <li>Web Design (2024)</li>
+      <li>Web Development (2024)</li>
+    </ul>
+  </section>
+
+  <!-- Experience Section -->
+  <section id="experience">
+    <h2>Work Experience</h2>
+    <ul>
+      <li><span class="popup" data-info="Developed responsive websites using HTML, CSS, JS.">
+        Web Developer Intern at Unified Mentor (2025)</span></li>
+    </ul>
+  </section>
+
+  <!-- Skills Section -->
+  <section id="skills">
+    <h2>Skills</h2>
+    <div class="skill" data-info="Proficient in building responsive websites.">HTML</div>
+    <div class="skill" data-info="Styling, Flexbox, Grid, Animations.">CSS</div>
+    <div class="skill" data-info="Server-side scripting for dynamic web applications.">PHP</div>
+    <div class="skill" data-info="Interactive features, DOM Manipulation.">JavaScript</div>
+    <div class="skill" data-info="Versatile language for web development, automation, and data analysis.">Python</div>
+    <div class="skill" data-info="Content Management System (CMS) for building websites and blogs.">Wordpress</div>
+  </section>
+
+  <!-- Projects Section with Gallery -->
+  <section id="projects">
+    <h2>Projects</h2>
+    <ul>
+    <li class="project-item" data-title="Basic calculator" data-description="Basic calculator to develop a functional calculator that can perform arithmetic operations.">Basic calculator</li>
+    <li class="project-item" data-title="Blog website" data-description="A personal portfolio and blog showcasing my passion for drawing, including traditional and digital artwork, along with tutorials and creative ideas.">Blog Website</li>
+    <li class="project-item" data-title="Chat Application" data-description="Includes features like real-time messaging, user authentication, chat room creation, and dynamic member lists.">Chat Application</li>
+    <li class="project-item" data-title="Countdown Timer" data-description="A user-friendly countdown timer for events, featuring a clear and engaging display of days, hours, minutes, and seconds.">Countdown Timer</li>
+    <li class="project-item" data-title="Expense Tracker" data-description="A personal finance management tool enabling users to log, view, and manage expenses with a clean and intuitive interface.">Expense Tracker</li>
+    <li class="project-item" data-title="Image Slider" data-description="A dynamic slider to showcase multiple images with responsive design and seamless animations.">Image Slider</li>
+    <li class="project-item" data-title="Interactive Infographics" data-description="Created visually appealing infographics with interactive data points, real-time updates, and responsive layouts to improve user engagement.">Interactive Infographics</li>
+    <li class="project-item" data-title="Interactive Map" data-description="A responsive and user-friendly interactive map designed to display location-specific data and details using JavaScript.">Interactive Map</li>
+    <li class="project-item" data-title="Interactive Quiz" data-description="Incorporates countdown timers, question difficulty levels, and end-of-quiz summary to enhance user challenge and engagement.">Interactive Quiz</li>
+    <li class="project-item" data-title="Interactive Storytelling" data-description="Features rich media like images and background sound effects, combined with interactive choices to create a personalized storytelling experience.">Interactive Storytelling</li>
+    <li class="project-item" data-title="Memory Card Game" data-description="A dynamic memory puzzle game designed with responsive layout, smooth flip animations, and performance tracking to enhance user engagement.">Memory Card Game</li>
+    <li class="project-item" data-title="Music Player" data-description="Designed a responsive music player with features like playlist creation, track progress control, and volume adjustment.">Music Player</li>
+    <li class="project-item" data-title="Recipe Book" data-description="A user-friendly recipe book web application with options to store, browse, and manage personal or shared recipes along with images and preparation steps.">Recipe Book</li>
+    <li class="project-item" data-title="Tic-Tac-Toe Game" data-description="A fun and user-friendly Tic-Tac-Toe game with responsive design, animated grid updates, and score tracking.">Tic-Tac-Toe Game</li>
+    <li class="project-item" data-title="To Do List App" data-description="Designed a responsive To-Do List application with real-time task updates, edit functionality, and task completion tracking.">To Do List App</li>
+    <li class="project-item" data-title="Virtual Art Gallery" data-description="Developed an interactive virtual art gallery featuring smooth navigation, zoom functionality, and detailed artwork descriptions.">Virtual Art Gallery</li>
+    <li class="project-item" data-title="Virtual Pet Simulator" data-description="A fun virtual pet simulator where users can feed, play with, and take care of a digital pet.">Virtual Pet Simulator</li>
+    <li class="project-item" data-title="Weather App" data-description="Developed a responsive weather app that fetches and displays live weather data including temperature, humidity, and wind speed using weather APIs.">Weather App</li>
+   
+  <!-- Tooltip Container -->
+  <div id="tooltip"></div>
+
+  <!-- Modal for Project Gallery -->
+  <div id="modal" class="modal">
+    <div class="modal-content">
+      <span id="modal-close">&times;</span>
+      <h3 id="modal-title"></h3>
+      <p id="modal-description"></p>
+    </div>
+  </div>
+
+  <script src="InteractiveResume.js"></script>
+    
+
+
+
+</body>
+</html>

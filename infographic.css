@@ -1,0 +1,245 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+  
+  body {
+    font-family: 'Georgia', serif;
+    background: #fff9f4;
+    color: #4b2e2e;
+    padding: 20px;
+    text-align: center;
+  }
+  
+  header {
+    margin-bottom: 30px;
+  }
+  
+  .chart-section {
+    display: flex;
+    justify-content: center;
+    padding: 20px;
+  }
+  
+  .chart-container {
+    width: 90%;
+    max-width: 700px;
+  }
+  
+  .tooltip {
+    position: absolute;
+    background-color: rgba(75, 46, 46, 0.9);
+    color: #fff;
+    padding: 8px 12px;
+    border-radius: 5px;
+    font-size: 14px;
+    pointer-events: none;
+    transform: translate(-50%, -100%);
+    z-index: 10;
+  }
+  h1{
+    font-size: 50px;
+    font-weight: bolder;
+  }
+  h2{
+    font-size: 26px;
+    font-weight: bold;
+    color: #ff4b87;
+  }
+  .hidden {
+    display: none;
+  }
+  
+  footer {
+    margin-top: 40px;
+    font-size: 14px;
+  }
+/* ...existing styles... */
+
+.wine-info {
+    padding: 40px 20px;
+    background: #fff4ef;
+    margin-top: 30px;
+  }
+  
+  .wine-info h2 {
+    font-size: 28px;
+    margin-bottom: 20px;
+    color: #ab4646;
+  }
+  
+  .wine-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 20px;
+  }
+  
+  .card {
+    background: #fff;
+    border: 2px solid #f3d1c0;
+    border-radius: 12px;
+    padding: 20px;
+    text-align: left;
+    box-shadow: 2px 4px 8px rgba(0,0,0,0.05);
+    transition: transform 0.3s ease;
+  }
+  
+  .card h3 {
+    margin-bottom: 10px;
+    color: #843c3c;
+  }
+  
+  .card p {
+    font-size: 14px;
+    line-height: 1.5;
+    color: #4b2e2e;
+  }
+  
+  .card:hover {
+    transform: translateY(-5px);
+  }
+    /* 🇮🇳 Indian Wine Production */
+.india-section {
+    background-color: #fffaf5;
+    padding: 40px 20px;
+    text-align: center;
+  }
+  
+  .india-section h2 {
+    color: #702020;
+    margin-bottom: 20px;
+  }
+  
+  .india-content {
+    max-width: 800px;
+    margin: 0 auto;
+  }
+  
+  .india-content p {
+    color: #4b2e2e;
+    font-size: 16px;
+    margin-bottom: 30px;
+    line-height: 1.6;
+  }
+  
+  .india-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 20px;
+  }
+  
+  .india-card {
+    background: #edfbda;
+    border: 1.5px solid #f2d4c4;
+    border-radius: 12px;
+    padding: 20px;
+    text-align: left;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+    transition: transform 0.3s ease;
+  }
+  
+  .india-card h3 {
+    color: #883333;
+    margin-bottom: 10px;
+  }
+  
+  .india-card p {
+    font-size: 14px;
+    color: #5a3e3e;
+  }
+  
+  .india-card:hover {
+    transform: translateY(-5px);
+  }
+  /* ❤️ Health Benefits */
+
+.health-section{
+  background-color: #edf7fa;
+  padding: 60px 20px;
+  text-align: center;
+}
+
+.section-title {
+  font-size: 28px;
+  color: #702c2c;
+  margin-bottom: 40px;
+}
+
+.health-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 30px;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.health-card {
+  background-color: #fff;
+  border: 2px solid #f3d2c1;
+  border-radius: 16px;
+  padding: 25px 20px;
+  transition: all 0.3s ease;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.05);
+  cursor: pointer;
+  text-align: center;
+}
+
+.health-card:hover {
+  transform: translateY(-5px);
+  background-color: #fff5f0;
+}
+
+.health-card .icon {
+  font-size: 32px;
+  margin-bottom: 10px;
+}
+
+.health-card h3 {
+  color: #8c3a3a;
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+
+.health-card p {
+  display: none;
+  font-size: 14px;
+  color: #533535;
+  line-height: 1.5;
+}
+
+.health-card.active p {
+  display: block;
+  margin-top: 10px;
+}
+
+/* ⚠️ Warning Section */
+.warning-section {
+    background-color: #fff5f5;
+    padding: 40px 20px;
+    text-align: center;
+  }
+  
+  .warning-box {
+    max-width: 700px;
+    margin: 0 auto;
+    background-color: #ffe6e6;
+    border: 2px solid #e06666;
+    border-radius: 12px;
+    padding: 25px;
+    color: #7a2e2e;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+  }
+  
+  .warning-box h3 {
+    margin-bottom: 15px;
+    font-size: 20px;
+    color: #aa1e1e;
+  }
+  
+  .warning-box ul {
+    list-style: disc;
+    margin: 10px 0 15px 20px;
+    text-align: left;
+  }
+    

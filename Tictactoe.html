@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            background: black;
+    background: radial-gradient(
+        circle, rgb(227, 234, 253)0%, rgb(244, 205, 243)55%, rgb(208, 213, 253)100%);
+    overflow: hidden; 
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    
+}
+.container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    flex-direction: column;
+}
+ h1 {
+    font-size: 3.5rem;
+    color:#fff;}
+
+        #game-board{  
+            width: 650px;
+            padding: 2rem 5rem;
+           display: grid;
+           grid-template-columns: repeat(3, 1fr);
+           grid-gap: 10px;
+           }
+        .cell {
+            height: 130px;
+width: 130px;
+display: flex;
+align-items: center;
+justify-content: center;
+color:rgb(49, 48, 48);
+background-color: #f0f0f0;
+font-weight: 600;
+font-size: 5.5rem;
+margin: 0.5rem;
+box-shadow: 2px 5px 5px #000;
+border-radius: 5px;
+        }
+        .cell:hover {
+            background-color: #bff5ee;
+        }
+
+    </style>
+</head>
+<body> 
+    <div class="container">
+    <h1>Tic Tac Toe</h1>
+    <div id="game-board"></div></div>
+
+    <script>
+        let gameBoard = ['','','','','','','','',''];
+        let currentPlayer = 'X';
+
+        //function to start the game
+        function startGame() {
+            renderGameBoard();
+        }
+        
+        //function to render the game board
+        function renderGameBoard() {
+            let gameBoardHTML = '';
+            for(let i = 0; i < gameBoard.length; i++){
+                gameBoardHTML += `<div class="cell" data-index="${i}">${gameBoard[i]}</div>`;
+            }
+            document.getElementById('game-board').innerHTML = gameBoardHTML;
+            addEventListeners();
+        }
+
+        //function to add event listeners to the cells
+        function addEventListeners() {
+            let cells = document.getElementsByClassName('cell');
+            for (let i = 0; i < cells.length; i++) {
+                cells[i].addEventListener('click', handleCellClick);
+            }
+        }
+
+        //function to handle cell click
+        function handleCellClick(event) {
+            let cellIndex = event.target.dataset.index;
+            if(gameBoard[cellIndex] === '') {
+                gameBoard[cellIndex] = 'X';
+            renderGameBoard();
+            checkForWinner();
+            if (!checkForWinner()){
+                setTimeout(computerMove, 500);
+            }
+            }
+        }
+
+        // function to handle computer move
+        function computerMove() {
+            let emptyCells = [];
+            for (let i = 0; i < gameBoard.length; i++) {
+                if (gameBoard[i] === '') {
+                    emptyCells.push(i);
+                }
+            }
+let randomIndex = Math.floor(Math.random() * emptyCells.length);
+gameBoard[emptyCells[randomIndex]] = 'O';
+randerGameBoard();
+checkForWinner();
+        }
+        //function to check for winner
+        function checkForWinner() {
+            let winningCombinations = [
+                [0, 1, 2],
+                [3, 4, 5],
+                [6, 7, 8],
+                [0, 3, 6],
+                [1, 4, 7],
+                [2, 5, 8],
+                [0, 4, 8],
+                [2, 4, 6]
+            ];
+            for (let i = 0; i < winningCombinations.length; i++) {
+                let combination = winningCombinations[i];
+                if (gameBoard[combination[0]] === gameBoard[combination[1]] &&
+                    gameBoard[combination[1]] === gameBoard[combination[2]] &&
+                   
+                    gameBoard[combination[0]] !==''){
+                        if ( gameBoard[combination[0]] === 'X') {
+                            alert ('Congratulations You win!');
+                        } else {
+                            alert ('Computer wins!');
+                        }
+                        resetGame();
+                        return true;
+                    }
+            }
+            return false;
+        }
+        //function to reset the game
+        function resetGame() {
+            gameBoard = ['','','','','','','','',''];
+            renderGameBoard();
+        }
+        startGame();
+    </script>
+</body>
+</html>

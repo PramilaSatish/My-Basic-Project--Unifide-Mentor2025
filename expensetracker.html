@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Expense Tracker</title>
+    <link rel="stylesheet" href="./expensetracker.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Expense Tracker</h1>
+    
+        <form id="transaction-form">
+          <input type="date" id="date" required>
+          <input type="text" id="description" placeholder="Description" required>
+          <select id="category" required>
+            <option value="">Select Category</option>
+            <option value="Salary">Salary</option>
+            <option value="Food">Food</option>
+            <option value="Transport">Transport</option>
+            <option value="fees">Fees</option>
+            <option value="Health">Health</option>
+            <option value="Entertainment">Entertainment</option>
+            <option value="Other">Other</option>
+          </select>
+          <input type="number" id="amount" placeholder="Amount" required>
+          <select id="type" required>
+            <option value="income">Income</option>
+            <option value="expense">Expense</option>
+          </select>
+          <button type="submit">Add Transaction</button>
+        </form>
+    
+        <div class="summary">
+          <div onclick="editSummary('income')">Total Income: <span id="total-income">0</span></div>
+          <div onclick="editSummary('expense')">Total Expenses: <span id="total-expense">0</span></div>
+          <div>Net Balance: <span id="net-balance">0</span></div>
+        </div>
+    
+        <ul class="transactions" id="transaction-list"></ul>
+      </div>
+
+
+      <script>
+        const form = document.getElementById('transaction-form');
+    const transactionList = document.getElementById('transaction-list');
+    const totalIncomeEl = document.getElementById('total-income');
+    const totalExpenseEl = document.getElementById('total-expense');
+    const netBalanceEl = document.getElementById('net-balance');
+
+    let transactions = JSON.parse(localStorage.getItem('transactions')) || [];
+
+    function updateLocalStorage() {
+      localStorage.setItem('transactions', JSON.stringify(transactions));
+    }
+
+    function updateSummary() {
+      let income = transactions.filter(t => t.type === 'income')
+                               .reduce((sum, t) => sum + t.amount, 0);
+      let expense = transactions.filter(t => t.type === 'expense')
+                                .reduce((sum, t) => sum + t.amount, 0);
+      totalIncomeEl.textContent = income.toFixed(2);
+      totalExpenseEl.textContent = expense.toFixed(2);
+      netBalanceEl.textContent = (income - expense).toFixed(2);
+    }
+
+    function renderTransactions() {
+      transactionList.innerHTML = '';
+      transactions.forEach((t, index) => {
+        const li = document.createElement('li');
+        li.classList.add(t.type);
+        li.innerHTML = `
+          ${t.date} - ${t.description} [${t.category}] - $${t.amount.toFixed(2)}
+          <button onclick="deleteTransaction(${index})">Delete</button>
+        `;
+        transactionList.appendChild(li);
+      });
+    }
+
+    function deleteTransaction(index) {
+      transactions.splice(index, 1);
+      updateLocalStorage();
+      renderTransactions();
+      updateSummary();
+    }
+
+    function editSummary(type) {
+      let newValue = prompt(`Enter new ${type} value:`);
+      newValue = parseFloat(newValue);
+      if (!isNaN(newValue) && newValue >= 0) {
+        let otherType = type === 'income' ? 'expense' : 'income';
+        let otherValue = transactions.filter(t => t.type === otherType).reduce((sum, t) => sum + t.amount, 0);
+
+        transactions = transactions.filter(t => t.type !== type);
+        transactions.push({
+          date: new Date().toISOString().split('T')[0],
+          description: `Manual ${type} edit`,
+          category: 'Other',
+          amount: newValue,
+          type: type
+        });
+
+        updateLocalStorage();
+        renderTransactions();
+        updateSummary();
+      } else {
+        alert("Invalid input. Please enter a valid number.");
+      }
+    }
+
+    form.addEventListener('submit', (e) => {
+      e.preventDefault();
+      const date = document.getElementById('date').value;
+      const description = document.getElementById('description').value.trim();
+      const category = document.getElementById('category').value;
+      const amount = parseFloat(document.getElementById('amount').value);
+      const type = document.getElementById('type').value;
+
+      if (!date || !description || !category || isNaN(amount) || amount <= 0) {
+        alert('Please fill in all fields with valid values.');
+        return;
+      }
+
+      const transaction = { date, description, category, amount, type };
+      transactions.push(transaction);
+      updateLocalStorage();
+      renderTransactions();
+      updateSummary();
+      form.reset();
+    });
+
+    renderTransactions();
+    updateSummary();
+      </script>
+</body>
+</html>

@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>3rd Article</title>
+    <link rel="stylesheet" href="./blog.css">
+    <style>
+      body{
+        font-family: Georgia, 'Times New Roman', Times, serif;
+font-size: 25px;
+font-style: italic;
+color: blue;
+background-color: rgb(245, 235, 255);
+      }
+      .A{
+display:grid;
+      }
+      .b{
+        width: 100%;
+      }
+      .gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    padding: 30px;
+  }
+  
+  .artwork {
+    transition: transform 0.3s ease;
+    cursor: pointer;
+  }
+  
+  .artwork:hover {
+    transform: scale(1.05);
+  }
+  
+  .artwork img {
+    width: 100%;
+    border-radius: 10px;
+  }
+  
+  /* Modal Popup */
+  .modal {
+    display: none;
+    position: fixed;
+    z-index: 100;
+    padding-top: 80px;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0,0,0,0.9);
+  }
+  
+  .modal-content {
+    margin: auto;
+    display: block;
+    max-width: 80%;
+    border-radius: 10px;
+  }
+  
+  #caption {
+    color: #f1f1f1;
+    margin-top: 15px;
+    font-size: 20px;
+  }
+  
+  .close {
+    position: absolute;
+    top: 30px;
+    right: 40px;
+    color: white;
+    font-size: 35px;
+    cursor: pointer;
+  }
+  
+  @media (max-width: 768px) {
+    .modal-content {
+      width: 90%;
+    }
+  }
+
+    </style>
+</head>
+<body> 
+  <div class="article1">
+
+    <p class="date" id="published-date"></p>
+ <script>
+  // Set the published date dynamically
+const publishedDate = new Date("2025-04-5"); // set your date here
+const dateElement = document.getElementById("published-date");
+
+const options = { year: 'numeric', month: 'long', day: 'numeric' };
+dateElement.textContent = `Published on ${publishedDate.toLocaleDateString(undefined, options)}`;
+</script>
+
+<h2> My 3<sup>rd</sup> Article</h2> 
+<h1 style="text-align: center;"> Nature Creates Magic</h1>
+  <p>There is a quiet kind of magic woven into the fabric of nature—subtle, yet breathtaking. It's in
+ the way the sun rises each morning, casting golden light over dew-kissed grass. It's in the soft 
+ rustling of leaves on a breezy afternoon, and the symphony of crickets serenading the night. Nature 
+ doesn't use wands or spells, yet it performs miracles every day.<br>
+A tiny seed turns into a towering tree. A caterpillar wraps itself in stillness, only to emerge with 
+wings. Raindrops fall from the sky, giving life to fields of wildflowers. There is no applause, no 
+grand performance—just silent transformations that remind us how powerful and gentle nature can be.
+When we pause and truly observe the natural world, we find wonder in the smallest details: the spiral 
+of a seashell, the dance of light through branches, the perfection of snowflakes. These are not 
+coincidences—they are nature’s art, crafted with patience and purpose.
+Nature’s magic also heals. A walk through a forest can quiet the loudest mind. The sound of waves can 
+smooth the roughest thoughts. It connects us to something ancient and wise, something that has been 
+creating for billions of years without ever needing recognition.
+In a world that moves fast, nature invites us to slow down, breathe, and witness the quiet marvels 
+unfolding all around us. The real magic is not in what we create—but in remembering that we are part 
+of something that already knows how to create beauty, balance, and life itself.</p>
+<div class="A">
+  <div class="b">
+<h4>"Art begins where observation meets inspiration—and nothing inspires more gently and profoundly 
+  than nature."</h4>
+  <p>I like to do nature drawing because it helps me feel calm, connected, and creative. When I sit 
+down with my sketchbook and look at the trees, flowers, or sky, I see more than just shapes—I see 
+life, patterns, and beauty that I want to capture.Drawing nature teaches me to slow down and really 
+observe. A simple leaf has so many tiny veins, textures, and curves. A flower isn’t just a color—it’s 
+layers of petals, shadows, and light. Even the way sunlight touches a tree makes a moment worth 
+sketching. Every time I draw, I notice something new.<br>
+Nature is the best artist. It creates mountains, rivers, clouds, and forests without needing help. 
+When I draw those things, I feel like I’m part of that creativity. My pencil follows the lines nature 
+already drew, and my imagination adds something of its own.<br>
+Nature drawing also makes me feel peaceful. When I’m outside, listening to birds or feeling the 
+breeze, I forget about stress or noise. It’s just me, my sketchbook, and the world around me. 
+Sometimes, I draw for hours without realizing how much time has passed.<br>
+I like to do nature drawing because it helps me see the magic in simple things. Whether it's a tiny 
+bug on a leaf or a big sunset across the sky, there’s always something beautiful waiting to be drawn. 
+And in those quiet moments of drawing, I feel happy, inspired, and free.</p>
+</div>
+<div class="gallery">
+  <h3>"My Art Gallery"</h3>
+  <div class="artwork" data-title="Abstract Vibes" data-artist="Artist A">
+    <img src="C:\Users\Dell\Desktop\UNIFIED MENTOR\BLOG\pages\My drawing\010.jpg" alt="Abstract Art 1" />
+  </div>
+  <div class="artwork" data-title="Color Burst" data-artist="Artist B">
+    <img src="C:\Users\Dell\Desktop\UNIFIED MENTOR\BLOG\pages\My drawing\005.jpg" alt="Abstract Art 2" />
+  </div>
+  <div class="artwork" data-title="Color Burst" data-artist="Artist B">
+    <img src="C:\Users\Dell\Desktop\UNIFIED MENTOR\BLOG\pages\My drawing\011.jpg" alt="Abstract Art 3" />
+  </div>
+  <div class="artwork" data-title="Color Burst" data-artist="Artist B">
+    <img src="C:\Users\Dell\Desktop\UNIFIED MENTOR\BLOG\pages\My drawing\038.jpg" alt="Abstract Art 4" />
+  </div>
+  <div class="artwork" data-title="Color Burst" data-artist="Artist B">
+    <img src="C:\Users\Dell\Desktop\UNIFIED MENTOR\BLOG\pages\My drawing\006.jpg" alt="Abstract Art 5" />
+  </div>
+  <div class="artwork" data-title="Color Burst" data-artist="Artist B">
+    <img src="C:\Users\Dell\Desktop\UNIFIED MENTOR\BLOG\pages\My drawing\040.jpg" alt="Abstract Art 5" />
+  </div>
+  <div class="artwork" data-title="Color Burst" data-artist="Artist B">
+    <img src="C:\Users\Dell\Desktop\UNIFIED MENTOR\BLOG\pages\My drawing\049.jpg" alt="Abstract Art 5" />
+  </div>
+  <!-- Modal Popup -->
+  <div id="artModal" class="modal">
+    <span class="close">&times;</span>
+    <img class="modal-content" id="modal-img" />
+    <div id="caption"></div>
+  </div>
+
+</div>
+</div>
+
+<script>
+  // Get modal elements
+const modal = document.getElementById("artModal");
+const modalImg = document.getElementById("modal-img");
+const captionText = document.getElementById("caption");
+const closeBtn = document.getElementsByClassName("close")[0];
+
+// Open modal on image click
+document.querySelectorAll(".artwork img").forEach((img) => {
+  img.addEventListener("click", function () {
+    modal.style.display = "block";
+    modalImg.src = this.src;
+
+    const parent = this.closest(".artwork");
+    const title = parent.getAttribute("data-title");
+    const artist = parent.getAttribute("data-artist");
+
+    captionText.innerHTML = `<strong>${title}</strong> by ${artist}`;
+  });
+});
+
+// Close modal on "X"
+closeBtn.onclick = function () {
+  modal.style.display = "none";
+};
+
+// Close modal on outside click
+window.onclick = function (event) {
+  if (event.target == modal) {
+    modal.style.display = "none";
+  }
+};
+
+</script>
+
+
+
+
+
+<!-- next article -->
+<div class="next-article"></div>
+    <a href="article4.html">Next Article →</a>
+     <!-- <h2>its my second article.....</h2> -->
+</div>
+<!-- RESPONSE -->
+<div class="response">
+    <button class="btn like" id="likeBtn" onclick="likePost()">👍 Like <span id="likeCount" class="count">0</span></button>
+    <button class="btn dislike" id="dislikeBtn" onclick="dislikePost()">👎 Dislike <span id="dislikeCount" class="count">0</span></button>
+  </div>
+
+  <script>
+    let likeCount = 0;
+    let dislikeCount = 0;
+
+    function likePost() {
+      likeCount++;
+      document.getElementById('likeCount').innerText = likeCount;
+
+      // Disable Dislike button after Like
+      document.getElementById('dislikeBtn').classList.add('disabled');
+    }
+
+    function dislikePost() {
+      dislikeCount++;
+      document.getElementById('dislikeCount').innerText = dislikeCount;
+
+      // Disable Like button after Dislike
+      document.getElementById('likeBtn').classList.add('disabled');
+    }
+  </script>
+</div>
+</body>
+</html>

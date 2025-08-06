@@ -1,0 +1,48 @@
+body {
+    font-family:'Times New Roman', Times, serif;
+    font-style: italic;
+    font-size: 25px;
+    color: red;
+    background: #f5f5f5;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+  }
+  .timer-container {
+    background: #fde5e5;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(255, 7, 7, 0.1);
+    text-align: center;
+  }
+  h1 {
+    margin-bottom: 20px;
+    color: #f80808;
+    font-weight: bold;
+    font-style: italic;
+  }
+  input, button {
+    padding: 10px;
+    margin: 10px;
+    font-family: 'Times New Roman', Times, serif;
+    font-style: italic;
+    background-color: #ffeaea;
+    color: red;
+    font-size: 25px;
+    border-radius: 10px;
+    border-color: #f80808;
+  }
+  button:hover {
+    background-color: #fa9090;
+  }
+  #countdown {
+    font-size: 24px;
+    margin-top: 20px;
+    color: #2c3e50;
+  }
+  .time-part {
+    display: inline-block;
+    margin: 0 10px;
+  }
