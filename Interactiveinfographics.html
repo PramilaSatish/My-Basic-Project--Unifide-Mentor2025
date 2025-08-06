@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ineractiv Infographic</title>
+    <link rel="stylesheet" href="./infographic.css">
+</head>
+<body>
+    <header>
+      <h1>Wine Report-2024</h1>
+      <p>Discover the global leaders in wine production.</p>
+    </header>
+  
+    <main>
+      <section class="chart-section">
+        <div class="chart-container">
+          <canvas id="wineChart"></canvas>
+        </div>
+      </section>
+  
+      <section class="info">
+        <h2>Top Wine Producing Countries - 2024</h2>
+        <div id="tooltip" class="tooltip hidden"></div>
+      </section>
+  
+      <!-- 🧀 New Wine Info Section -->
+      <section class="wine-info">
+        <h2>About Wine Types & Production</h2>
+        <div class="wine-cards">
+          <div class="card">
+            <h3>Red Wine</h3>
+            <p>Made from dark-colored grapes. Popular types include Merlot, Cabernet Sauvignon, and Pinot Noir. Italy and France lead in red wine production.</p>
+          </div>
+          <div class="card">
+            <h3>White Wine</h3>
+            <p>Produced using green grapes or red grapes with skin removed. Chardonnay and Sauvignon Blanc are global favorites.</p>
+          </div>
+          <div class="card">
+            <h3>Sparkling Wine</h3>
+            <p>Includes Champagne and Prosecco. Produced through secondary fermentation to add bubbles, popular in France and Italy.</p>
+          </div>
+          <div class="card">
+            <h3>Wine Regions</h3>
+            <p>Major wine-producing regions include Bordeaux (France), Tuscany (Italy), La Rioja (Spain), and Napa Valley (USA).</p>
+          </div>
+        </div>
+      </section>
+    </main><br>
+  <!-- 🍇 Grape Varieties -->
+<section class="grapes-section">
+    <h2>Popular Grape Varieties</h2>
+    <ul class="grape-list">
+      <li>🍇 Merlot - Smooth and fruity, widely grown in France and the US.</li>
+      <li>🍇 Cabernet Sauvignon - Bold and tannic, famous in Bordeaux and Napa.</li>
+      <li>🍇 Pinot Noir - Delicate and complex, thrives in Burgundy and Oregon.</li>
+      <li>🍇 Chardonnay - Versatile white grape, grown globally.</li>
+      <li>🍇 Sauvignon Blanc - Crisp and fresh, known from Loire and New Zealand.</li>
+    </ul>
+  </section>
+  <br><br>
+  <!-- 🌍 Interactive Map -->
+  <section class="map-section">
+    <h2>Global Wine Regions</h2>
+    <div class="map-container">
+      <img src="C:\Users\Dell\Desktop\UNIFIED MENTOR\Interactive Infographics\maptitude-national-drink-wine-day-map.jpg" alt="World Wine Map" usemap="#winemap">
+      <map name="winemap">
+        <area shape="circle" coords="450,180,20" alt="France" title="France: Bordeaux, Burgundy" />
+        <area shape="circle" coords="470,250,20" alt="Italy" title="Italy: Tuscany, Piedmont" />
+        <area shape="circle" coords="420,280,20" alt="Spain" title="Spain: Rioja, Ribera del Duero" />
+        <area shape="circle" coords="180,220,20" alt="USA" title="USA: Napa Valley" />
+        <area shape="circle" coords="300,420,20" alt="Argentina" title="Argentina: Mendoza" />
+        <area shape="circle" coords="720,420,20" alt="Australia" title="Australia: Barossa Valley" />
+      </map>
+    </div>
+  </section><br><br>
+  <!-- 🇮🇳 Indian Wine Production -->
+<section class="india-section">
+    <h2>In Indian Wine Production</h2>
+    <div class="india-content">
+      <p>
+        India’s wine industry has steadily grown in recent decades, with Maharashtra and Karnataka leading in production. 
+        The climate in regions like Nashik and Nandi Hills is ideal for cultivating grapes for both red and white wines.
+      </p>
+      <div class="india-cards">
+        <div class="india-card">
+          <h3>Nashik Valley</h3>
+          <p>Known as the "Wine Capital of India", Nashik produces over 60% of the country’s wine. Popular for Shiraz and Chenin Blanc.</p>
+        </div>
+        <div class="india-card">
+          <h3>Nandi Hills</h3>
+          <p>Located in Karnataka, this region produces high-quality Sauvignon Blanc and Cabernet Sauvignon. Cooler temperatures aid balanced wines.</p>
+        </div>
+        <div class="india-card">
+          <h3>Grape Varieties</h3>
+          <p>India grows grapes like Shiraz, Cabernet Sauvignon, Chenin Blanc, Sauvignon Blanc, and Zinfandel. Most wines are fruity and easy to drink.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+ <!-- 🍷 Elegant Health Benefits Section -->
+<section class="health-section">
+  <h2 class="section-title">🍷 Health Benefits of Moderate Wine Consumption</h2>
+  <div class="health-grid">
+    <div class="health-card" onclick="toggleBenefit(this)">
+      <div class="icon">❤️</div>
+      <h3>Heart Health</h3>
+      <p class="hidden">Red wine is rich in antioxidants like resveratrol, which may help protect your heart and blood vessels.</p>
+    </div>
+    <div class="health-card" onclick="toggleBenefit(this)">
+      <div class="icon">🧬</div>
+      <h3>Rich in Antioxidants</h3>
+      <p class="hidden">Wine contains polyphenols that may protect your cells from oxidative stress and support overall well-being.</p>
+    </div>
+    <div class="health-card" onclick="toggleBenefit(this)">
+      <div class="icon">🧘</div>
+      <h3>Mental Relaxation</h3>
+      <p class="hidden">Moderate wine consumption may help reduce stress and promote relaxation in social settings.</p>
+    </div>
+    <div class="health-card" onclick="toggleBenefit(this)">
+      <div class="icon">🦠</div>
+      <h3>Gut Health</h3>
+      <p class="hidden">Some compounds in wine may support digestive health and improve gut microbiota balance.</p>
+    </div>
+  </div>
+</section>
+
+  <script>
+    function toggleBenefit(card) {
+      card.classList.toggle('active');
+    }
+  </script>
+<!-- ⚠️ Wine Consumption Warning -->
+<section class="warning-section">
+    <div class="warning-box">
+      <h3>⚠️ Please Drink Responsibly</h3>
+      <p>
+        While moderate wine consumption may have some health benefits, excessive drinking can lead to serious health risks including liver disease, addiction, and mental health issues.
+      </p>
+      <p>
+        The <strong>recommended limit</strong> is:
+        <ul>
+          <li>1 glass/day for women</li>
+          <li>Up to 2 glasses/day for men</li>
+        </ul>
+      </p>
+      <p>
+        If you don't already drink wine, there's no medical reason to start.
+      </p>
+    </div>
+  </section>
+    
+  
+  <!-- 🖼️ Wine Images -->
+  <section class="gallery-section">
+    <h2>Wine Culture Gallery</h2><br>
+    <div class="gallery">
+      <img src="C:\Users\Dell\Desktop\UNIFIED MENTOR\Interactive Infographics\bottle.jpeg?auto=format&fit=crop&w=600&q=60" alt="Wine Bottle">
+      <img src="https://images.unsplash.com/photo-1506806732259-39c2d0268443?auto=format&fit=crop&w=600&q=60" alt="Vineyard">
+      <img src="C:\Users\Dell\Desktop\UNIFIED MENTOR\Interactive Infographics\cellar.jpeg?auto=format&fit=crop&w=600&q=60" alt="Wine Cellar">
+    </div>
+  </section>
+  
+    <footer>
+      <p>&copy; 2024 WineStats International</p>
+    </footer>
+  
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+      
+      <script src="infographic.js"></script>
+</body>
+</html>
