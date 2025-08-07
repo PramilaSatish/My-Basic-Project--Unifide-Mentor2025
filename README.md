@@ -32,6 +32,7 @@ Include a screenshot of infographic in action here.
 
 
 📈 Use Cases
+
 -Educational content visualization
 
 -Statistics and survey results
@@ -41,4 +42,5 @@ Include a screenshot of infographic in action here.
 -Portfolio showcase of creative data stories
 
 📌 Branch Info
+
 This project is available in the interactive-infographic branch
