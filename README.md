@@ -37,4 +37,4 @@ No installation or server required. Runs completely in the browser!
 <img width="947" height="615" alt="Virtual Pet Stimulator - Google Chrome 07-08-2025 20_15_13" src="https://github.com/user-attachments/assets/cec9e327-efd0-4219-ac12-79b97d5f2848" />
 
 📌 Note
-This project is maintained in the virtual-pet-simulator branch. To access the files:
+This project is maintained in the virtual-pet-simulator branch.
