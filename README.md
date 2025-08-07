@@ -12,6 +12,13 @@ This is a ** Chat Application** built using **HTML**, **CSS**, **JavaScript**, a
 - 🎨 Responsive UI with smooth design
 - ✅ Admin Controls (optional, if implemented)
 
+## 📁 Project Structure
+chat-app/
+├── index.html
+├── chat.css
+├── chat.js
+├── images
+
 
 📸 Screenshots
 
